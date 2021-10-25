@@ -4,7 +4,7 @@
 <script src="p5.js"></script>
 <script src="scenemanager.js"></script>
 <script src="p5.play.js"></script>
-
+<script src="p5.sound.js"></script>
 
 
 
@@ -44,7 +44,7 @@
         textArray[5] = loadImage('assets/text0.png');
       gameB = loadImage('assets/help.png');
     //buttnSound = loadSound('assets/buttnsound.mp3');
-   // bgMusic = loadSound('assets/bgm.mp3');
+    bgMusic = loadSound('assets/bgm.mp3');
     a = loadImage('assets/a.png');
     b = loadImage('assets/b.png');
   }
@@ -55,8 +55,8 @@ function setup(){
 buttn = createSprite(730,560);
 buttn2 = createSprite(770,490);
 
-// bgMusic.play();
-// bgMusic.setVolume(.3);
+ bgMusic.play();
+bgMusic.setVolume(.3);
 
 buttn2.addAnimation('unpressed','assets/BTN.png');
 buttn2.addAnimation('pressed','assets/BTN2.png');
