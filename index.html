@@ -43,8 +43,8 @@
         textArray[4] = loadImage('assets/tex4.png');
         textArray[5] = loadImage('assets/text0.png');
       gameB = loadImage('assets/help.PNG');
-    buttnSound = loadSound('assets/buttnsound.mp3');
-    bgMusic = loadSound('assets/bgm.mp3');
+    //buttnSound = loadSound('assets/buttnsound.mp3');
+   // bgMusic = loadSound('assets/bgm.mp3');
     a = loadImage('assets/a.png');
     b = loadImage('assets/b.png');
   }
@@ -55,8 +55,8 @@ function setup(){
 buttn = createSprite(730,560);
 buttn2 = createSprite(770,490);
 
-bgMusic.play();
-bgMusic.setVolume(.3);
+// bgMusic.play();
+// bgMusic.setVolume(.3);
 
 buttn2.addAnimation('unpressed','assets/BTN.png');
 buttn2.addAnimation('pressed','assets/BTN2.png');
@@ -66,8 +66,8 @@ buttn.addAnimation('pressed','assets/BTN2.png');
 
 buttn.onMousePressed = function(){
   this.changeAnimation('pressed');
-  buttnSound.play();
-  buttnSound.setVolume(.4);
+//   buttnSound.play();
+//   buttnSound.setVolume(.4);
   if(x>0){
     x=x-1;
     z=0;
@@ -89,8 +89,8 @@ if (x=1){
 
   buttn2.onMousePressed = function(){
   this.changeAnimation('pressed');
-  buttnSound.play();
-  buttnSound.setVolume(.4);
+//   buttnSound.play();
+//   buttnSound.setVolume(.4);
   if (x<5){
   x=x+1;
 }
@@ -111,7 +111,6 @@ if (x=1){
 }
 
 function draw(){
-//image(setArray[0+add],100,100,533,820);
 background(255);
 image(gameB,300,0)
 image(a,765,530);
@@ -120,8 +119,7 @@ image(gifs[x],470+xinc-yinc,110);
 image(textArray[x],850,100);
 drawSprites();
 console.log(xinc);
-//text("sup loser", nums[1+add]*50,20);
-//image(gif[0],0,0,300,200);
+
 
 
 }
