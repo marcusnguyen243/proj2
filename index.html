@@ -43,7 +43,7 @@
         textArray[4] = loadImage('assets/tex4.png');
         textArray[5] = loadImage('assets/text0.png');
       gameB = loadImage('assets/help.png');
-    //buttnSound = loadSound('assets/buttnsound.mp3');
+    buttnSound = loadSound('assets/buttnsound.mp3');
     bgMusic = loadSound('assets/bgm.mp3');
     a = loadImage('assets/a.png');
     b = loadImage('assets/b.png');
@@ -51,11 +51,10 @@
 
 function setup(){
   createCanvas(1600,1400);
-  //document.write("<h2>" + "hi" + "</h2>")
 buttn = createSprite(730,560);
 buttn2 = createSprite(770,490);
 
- bgMusic.play();
+bgMusic.play();
 bgMusic.setVolume(.3);
 
 buttn2.addAnimation('unpressed','assets/BTN.png');
@@ -64,10 +63,13 @@ buttn2.addAnimation('pressed','assets/BTN2.png');
 buttn.addAnimation('unpressed','assets/BTN.png');
 buttn.addAnimation('pressed','assets/BTN2.png');
 
+  
+  //I used arrays to toggle scenes. The first button subtracts from the array, and takes you to the previous scene.
+  
 buttn.onMousePressed = function(){
   this.changeAnimation('pressed');
-//   buttnSound.play();
-//   buttnSound.setVolume(.4);
+buttnSound.play();
+buttnSound.setVolume(.4);
   if(x>0){
     x=x-1;
     z=0;
@@ -82,15 +84,17 @@ if (x=1){
 }
 
 
+  //This button advances the array forward by adding x to itself. 
 
+  
   buttn.onMouseReleased = function(){
   this.changeAnimation('unpressed');
   }
 
   buttn2.onMousePressed = function(){
   this.changeAnimation('pressed');
-//   buttnSound.play();
-//   buttnSound.setVolume(.4);
+ buttnSound.play();
+buttnSound.setVolume(.4);
   if (x<5){
   x=x+1;
 }
@@ -110,6 +114,9 @@ if (x=1){
 
 }
 
+  //gifs[x] and textArray[x] are the various scenes and blurbs of text. They are advanced forward by the if statements in the buttons.
+  
+  
 function draw(){
 background(255);
 image(gameB,300,0)
